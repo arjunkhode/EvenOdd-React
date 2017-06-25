@@ -28,6 +28,22 @@ export default function () {
           "name": "Harley Davidson"
         }
     ]
+  },
+  {
+    "id": "3",
+    "title": "Scooters",
+    "items": [
+        {
+          "id": "01",
+          "name": "Bajaj"
+        }, {
+          "id": "02",
+          "name": "Scooty"
+        }, {
+          "id": "02",
+          "name": "Sunny"
+        }
+    ]
   }
 ];
 }
