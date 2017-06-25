@@ -3,12 +3,14 @@ import { swapState } from '../actions/index';
 import React, { Component } from 'react';
 
 class App extends Component {
- 
+ // constructor(){
+ // 	this.generateButtons = this.generateButtons.bind(this);
+ // }
 componentDidMount(){
-	console.log("Hello");
-// if(this.props.stuff){
+	// console.log("Hello");
+	if(this.props.stuff){
 	console.log("all stuff is:", this.props.stuff);
-// }
+	}
 }
 
 componentDidUpdate(){
@@ -36,6 +38,12 @@ displayEven(){
 	}
 }
 
+generateButtons(stuff){
+		stuff.map((item) => {
+			console.log(<button key={item.title}>{item.title}</button>);
+			return <button id={item.title}>{item.title}</button>;
+		});
+}
 
 displayOdd(){
 	if(this.props.stuff){
@@ -62,6 +70,7 @@ displayOdd(){
   render() {
     return (
       <div className="result">React simple starter
+      	{this.generateButtons(this.props.stuff)}
       	<button className="even" onClick={this.displayEven.bind(this)}>Car</button>
       	<button className="odd" onClick={this.displayOdd.bind(this)} >Bike</button>
       	<div className="evenOdd">
