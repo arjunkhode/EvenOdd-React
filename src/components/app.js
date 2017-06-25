@@ -6,12 +6,22 @@ class App extends Component {
  // constructor(){
  // 	this.generateButtons = this.generateButtons.bind(this);
  // }
-componentDidMount(){
-	// console.log("Hello");
-	if(this.props.stuff){
-	console.log("all stuff is:", this.props.stuff);
-	}
+
+generateButtons(stuff){
+		stuff.map((item) => {
+			console.log(<button key={item.title}>{item.title}</button>);
+			return <button key={item.title}>{item.title}</button>;
+		});
 }
+
+// componentDidMount(){
+// 	// console.log("Hello");
+// 	if(this.props.stuff){
+// 		// const ap = generateButtons(this.props.stuff);
+// 		// document.append(ap);
+// 	// console.log("all stuff is:", this.props.stuff);
+// 	}
+// }
 
 componentDidUpdate(){
 	document.querySelector('.stated').textContent=this.props.current;
@@ -41,7 +51,7 @@ displayEven(){
 generateButtons(stuff){
 		stuff.map((item) => {
 			console.log(<button key={item.title}>{item.title}</button>);
-			return <button id={item.title}>{item.title}</button>;
+			return <button key={item.title}>{item.title}</button>;
 		});
 }
 
@@ -70,7 +80,11 @@ displayOdd(){
   render() {
     return (
       <div className="result">React simple starter
-      	{this.generateButtons(this.props.stuff)}
+      	<div className="generatedButtons">
+      	{	this.props.stuff.map((item) => {
+			return <button key={item.title}>{item.title}</button>
+		})}
+      	</div>
       	<button className="even" onClick={this.displayEven.bind(this)}>Car</button>
       	<button className="odd" onClick={this.displayOdd.bind(this)} >Bike</button>
       	<div className="evenOdd">

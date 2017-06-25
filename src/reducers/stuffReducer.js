@@ -10,11 +10,9 @@ export default function () {
         }, {
           "id": "02",
           "name": "Honda"
-<<<<<<< HEAD
         }, {
           "id": "03",
           "name": "Maruti"
-=======
         }, {
           "id": "03",
           "name": "Maruti"
@@ -31,22 +29,10 @@ export default function () {
         }, {
           "id": "02",
           "name": "Harley Davidson"
->>>>>>> 6ec9bb2d68f32318f2c553f6d6356e687f718aff
         }
     ]
   },
   {
-<<<<<<< HEAD
-    "id": "2",
-    "title": "Bikes",
-    "items": [
-        {
-          "id": "01",
-          "name": "Ducatti"
-        }, {
-          "id": "02",
-          "name": "Harley Davidson"
-=======
     "id": "3",
     "title": "Scooters",
     "items": [
@@ -59,7 +45,6 @@ export default function () {
         }, {
           "id": "02",
           "name": "Sunny"
->>>>>>> 6ec9bb2d68f32318f2c553f6d6356e687f718aff
         }
     ]
   }
