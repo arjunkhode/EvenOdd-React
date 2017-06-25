@@ -1,22 +1,28 @@
 const stuff=[
   {
-    "type": "even",
-    "other": "stuffisnice"
+    "id": "1",
+    "title": "even",
+    "items" [
+        {
+          "id": "01"
+          "name": "item even 01"
+        }, {
+          "id": "02"
+          "name": "item even 02"
+        }
+    ]
   },
   {
-    "type": "odd",
-    "other": "soo nice"
-  },
-  {
-    "type": "even",
-    "other": "nice indeed"
-  },
-  {
-    "type": "odd",
-    "other": "nicey dicey"
-  },
-  {
-    "type": "odd",
-    "other": "so goood"
+    "id": "2",
+    "title": "odd",
+    "items" [
+        {
+          "id": "01"
+          "name": "item odd 01"
+        }, {
+          "id": "02"
+          "name": "item odd 02"
+        }
+    ]
   }
 ];
