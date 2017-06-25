@@ -1,58 +1,33 @@
 export default function () {
   return [
   {
-    "id": "Mazda",
+    "id": "1",
     "title": "car",
     "items": [
         {
           "id": "01",
-          "name": "caritem even 01"
+          "name": "Mazda"
         }, {
           "id": "02",
-          "name": "caritem even 02"
+          "name": "Honda"
+        }, {
+          "id": "03",
+          "name": "Maruti"
         }
     ]
   },
   {
-    "id": "Ducati panigale 1200",
-    "title": "bike",
+    "id": "2",
+    "title": "Bikes",
     "items": [
         {
           "id": "01",
-          "name": "bike item odd 01"
+          "name": "Ducatti"
         }, {
           "id": "02",
-          "name": "bike item odd 02"
+          "name": "Harley Davidson"
         }
     ]
-  },
-
-  {
-    "id": "Ford Fusion",
-    "title": "car",
-    "items": [
-        {
-          "id": "01",
-          "name": "caritem even 01"
-        }, {
-          "id": "02",
-          "name": "caritem even 02"
-        }
-    ]
-  },
-
-  {
-    "id": "Suzuki GSXR 650",
-    "title": "bike",
-    "items": [
-        {
-          "id": "01",
-          "name": "bikeitem even 01"
-        }, {
-          "id": "02",
-          "name": "bikeitem even 02"
-        }
-    ]
-  },
+  }
 ];
 }
