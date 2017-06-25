@@ -25,34 +25,35 @@ generateButtons(stuff){
 
 componentDidUpdate(){
 	document.querySelector('.stated').textContent=this.props.current;
+	console.log("changed the state to:",this.props.current);
 }
 
-displayEven(){
+displayResult(e){
 	// console.log("hi");
 	if(this.props.stuff){
 		// console.log("hiya");
 	// document.querySelector('.evenOdd').textContent="";
 		// if old state was odd, we call swapState action
-		if(this.props.current === "odd"){
+		// if(this.props.current === "odd"){
 			// console.log("even says: was odd, so switching state");
-			this.props.swapState("odd");
-		}
-		let cartemp = ""; // stores filtered cars in it, collects all results
-		this.props.stuff.map((current)=> {
-			if(current.title==="car")
-			{current.items.map((item) => {cartemp+= "\n"+item.name});
-			}
-			document.querySelector('.evenOdd').textContent = cartemp;
-			// console.log("car:",current.items);
-		});
+			console.log(e.target);
+			this.props.swapState("");
+		// // }
+		// let cartemp = ""; // stores filtered cars in it, collects all results
+		// this.props.stuff.map((current)=> {
+		// 	if(current.title==="car")
+		// 	{current.items.map((item) => {cartemp+= "\n"+item.name});
+		// 	}
+		// 	document.querySelector('.evenOdd').textContent = cartemp;
+		// 	// console.log("car:",current.items);
+		// });
 	}
 }
 
-generateButtons(stuff){
-		stuff.map((item) => {
-			console.log(<button key={item.title}>{item.title}</button>);
-			return <button key={item.title}>{item.title}</button>;
-		});
+toggleButtons(itemID){
+console.log(this)
+console.log(itemID)
+this.props.swapState(itemID);
 }
 
 displayOdd(){
@@ -82,11 +83,9 @@ displayOdd(){
       <div className="result">React simple starter
       	<div className="generatedButtons">
       	{	this.props.stuff.map((item) => {
-			return <button key={item.title}>{item.title}</button>
+			return <button key={item.title} onClick={this.toggleButtons.bind(this, item.id)}>{item.title}</button>
 		})}
       	</div>
-      	<button className="even" onClick={this.displayEven.bind(this)}>Car</button>
-      	<button className="odd" onClick={this.displayOdd.bind(this)} >Bike</button>
       	<div className="evenOdd">
       		Result:
       	</div>
