@@ -5,9 +5,10 @@ import React, { Component } from 'react';
 class App extends Component {
  
 componentDidMount(){
-if(this.props.stuff){
+	console.log("Hello");
+// if(this.props.stuff){
 	console.log("all stuff is:", this.props.stuff);
-}
+// }
 }
 
 componentDidUpdate(){
@@ -15,35 +16,35 @@ componentDidUpdate(){
 }
 
 displayEven(){
-	if(this.props.stuff){
+	if(this.props.stuff.title){
 	document.querySelector('.evenOdd').textContent="";
 		// if old state was odd, we call swapState action
 		if(this.props.current === "odd"){
 			console.log("even says: was odd, so switching state");
 			this.props.swapState("odd");
 		}
-		this.props.stuff.map((current)=> {
-			if(current.type==="even")
-			document.querySelector('.evenOdd').textContent+=" "+current.other;
-			console.log("even:",current.other);
-		});
+		// this.props.stuff.map((current)=> {
+		// 	if(current.type==="even")
+		// 	document.querySelector('.evenOdd').textContent+=" "+current.other;
+		// 	console.log("even:",current.other);
+		// });
 	}
 }
 
 
 displayOdd(){
-	if(this.props.stuff){
+	if(this.props.stuff.title){
 	document.querySelector('.evenOdd').textContent="";
 		// if old state was even, we swapState
 		if(this.props.current === "even"){
 			console.log("odd says: was even, so switching state");
 			this.props.swapState("even"); // pass current state to swapState
 		}
-		this.props.stuff.map((current)=> {
-			if(current.type==="odd")
-			document.querySelector('.evenOdd').textContent+=" "+current.other;
-			console.log("odd:",current.other);
-		});
+		// this.props.stuff.map((current)=> {
+		// 	if(current.type==="odd")
+		// 	document.querySelector('.evenOdd').textContent+=" "+current.other;
+		// 	console.log("odd:",current.other);
+		// });
 	}
 }
 
