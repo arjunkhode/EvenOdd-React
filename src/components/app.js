@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
-import { swapState } from '../actions/index';
+import { swapState, setVehicle } from '../actions/index';
 import React, { Component } from 'react';
 
 class App extends Component {
 constructor(){
 	super();
 	this.elem = [];
+	var name2dispay="";
 }
 
 generateButtons(stuff){
@@ -16,9 +17,7 @@ generateButtons(stuff){
 }
 
 level2click(id){
-this.props.history.push("/this.props.current/this.props.current");
-console.log(id);
-// this.props.setCurrentVehicle();
+this.props.setVehicle(id);
 }
 
 elemUpdate(){
@@ -31,12 +30,32 @@ elemUpdate(){
 		if (this.props.stuff[i].title===rez){
 			answer = this.props.stuff[i].items;
 			// console.log("hhh:",answer);
-			answer.map((item) => {this.elem.push(<button onClick={this.level2click.bind(this,item.id)} key={item.name+item.id}>{item.name}</button>)});
+			answer.map((item) => {this.elem.push(<button onClick={this.level2click.bind(this,item.name)} key={item.name+item.id}>{item.name}</button>)});
 			break;
 		}
 	}	
 	return (this.elem);
 
+}
+
+// vehiUpdate(){
+
+// 	// let jez = this.props.inner;
+// 	// let rez = this.props.current;
+// 	// let eve = document.querySelector('.vehiDetails');
+// 	// // eve.textContent = "";
+// 	// this.vehi=[];
+// 	// let swer="";
+// 	// for(let i=0;i<this.props.stuff.length;i++){
+// 	// 	if (this.props.stuff[i].title===rez){
+// 	// 		swer = this.props.stuff[i].items;
+// 	// 		// console.log("hhh:",answer);
+// 	// 		swer.map((item) => {if(item.name === this.props.inner) this.name2display=item.name;});
+// 	// 		break;
+// 	// 	}
+// 	// }	
+// 	// return ("presenting: ",this.name2display);
+// return (this.props.inner);
 }
 // componentDidMount(){
 // 	// console.log("Hello");
@@ -48,7 +67,7 @@ elemUpdate(){
 // }
 
 componentDidUpdate(){
-	document.querySelector('.stated').textContent=this.props.current;
+	// document.querySelector('.stated').textContent=this.props.current;
 	console.log("changed the state to:",this.props.current);
 	
 }
@@ -95,11 +114,18 @@ displayOdd(){
 		})}
       	</div>
       	Current state is:
-      	<div className="stated"></div>
-      	{this.renderButtons.bind(this)}
+      	<div className="stated">
+      	{this.props.current}
+      	</div>
+      	
+		<div className="btns">
+		{this.elemUpdate()} 
 		</div>
-		{this.elemUpdate()}
-	</div>
+		<div className="vehiDetails">
+			{this.props.inner}
+		</div>
+		</div>
+		</div>
     );
   }
 }
@@ -108,7 +134,8 @@ function mapStateToProps(state){
 	return{
 		stuff: state.stuff,
 		current: state.current.stateRightNow,
+		inner: state.inner.rightNow,
 	};
 }
 
-export default connect(mapStateToProps, {swapState})(App);
+export default connect(mapStateToProps, {swapState,setVehicle})(App);

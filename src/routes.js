@@ -6,8 +6,5 @@ import Vehicle from './components/vehicle';
 
 
 export default(
-	<Switch>
-	<Route path="/:vehicle/:id" component={Vehicle} />
 	<Route path="/" component={App} />
-	</Switch>
 );
