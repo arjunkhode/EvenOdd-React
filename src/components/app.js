@@ -3,9 +3,10 @@ import { swapState } from '../actions/index';
 import React, { Component } from 'react';
 
 class App extends Component {
- // constructor(){
- // 	this.generateButtons = this.generateButtons.bind(this);
- // }
+constructor(){
+	super();
+	this.elem = [];
+}
 
 generateButtons(stuff){
 		stuff.map((item) => {
@@ -14,6 +15,23 @@ generateButtons(stuff){
 		});
 }
 
+elemUpdate(){
+	let rez = this.props.current;
+	let eve = document.querySelector('.evenOdd');
+	// eve.textContent = "";
+	this.elem=[];
+	let answer="";
+	for(let i=0;i<this.props.stuff.length;i++){
+		if (this.props.stuff[i].title===rez){
+			answer = this.props.stuff[i].items;
+			// console.log("hhh:",answer);
+			answer.map((item) => {this.elem.push(<button key={item.name}>{item.name}</button>)});
+			break;
+		}
+	}	
+	return (this.elem);
+
+}
 // componentDidMount(){
 // 	// console.log("Hello");
 // 	if(this.props.stuff){
@@ -26,24 +44,15 @@ generateButtons(stuff){
 componentDidUpdate(){
 	document.querySelector('.stated').textContent=this.props.current;
 	console.log("changed the state to:",this.props.current);
-	let rez = this.props.current;
-	let eve = document.querySelector('.evenOdd');
-	eve.textContent = "";
-	let answer="";
-	for(let i=0;i<this.props.stuff.length;i++){
-		if (this.props.stuff[i].title===rez){
-			answer = this.props.stuff[i].items;
-			// console.log("hhh:",answer);
-			answer.map((item) => {eve.textContent += item.name});
-			break;
-		}
-	}	
+	
+}
+
+renderButtons(){
+console.log(this.elem);
 }
 
 
 toggleButtons(itemID){
-console.log(this)
-console.log(itemID)
 this.props.swapState(itemID);
 }
 
@@ -71,18 +80,19 @@ displayOdd(){
 
   render() {
     return (
+    <div className="everything">
       <div className="result">React simple starter
       	<div className="generatedButtons">
       	{	this.props.stuff.map((item) => {
 			return <button key={item.title} onClick={this.toggleButtons.bind(this, item.title)}>{item.title}</button>
 		})}
       	</div>
-      	<div className="evenOdd">
-      		Result:
-      	</div>
       	Current state is:
       	<div className="stated"></div>
-      </div>
+      	{this.renderButtons.bind(this)}
+		</div>
+		{this.elemUpdate()}
+	</div>
     );
   }
 }
