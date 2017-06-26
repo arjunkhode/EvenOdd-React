@@ -19,15 +19,18 @@ class Vehicle extends React.Component{
 //   console.log("pranaam yajmaan: here is your vehicle:",answer);
 //   return (answer);
 // }
-
-fetchVehicle(){
-	return ("Halo");
+doit(){
+	// alert();
+	console.log("ihi");
+	let nme = this.props.params.name;
+	let model = this.props.params.model;
+	return model;
 }
 
 	render(){
 		return(
 			<div>
-				{this.fetchVehicle.bind(this)}
+				{this.doit()}
 				<Link to="/">
 				<button>Go back</button>
 				</Link>

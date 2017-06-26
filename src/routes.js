@@ -6,5 +6,8 @@ import Vehicle from './components/vehicle';
 
 
 export default(
+	// <Switch>
+	// <Route path="/:name/:model" component={Vehicle} />
+	// </Switch>
 	<Route path="/" component={App} />
 );
