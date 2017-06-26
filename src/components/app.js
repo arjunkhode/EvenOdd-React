@@ -15,6 +15,12 @@ generateButtons(stuff){
 		});
 }
 
+level2click(id){
+this.props.history.push("/this.props.current/this.props.current");
+console.log(id);
+// this.props.setCurrentVehicle();
+}
+
 elemUpdate(){
 	let rez = this.props.current;
 	let eve = document.querySelector('.evenOdd');
@@ -25,7 +31,7 @@ elemUpdate(){
 		if (this.props.stuff[i].title===rez){
 			answer = this.props.stuff[i].items;
 			// console.log("hhh:",answer);
-			answer.map((item) => {this.elem.push(<button key={item.name}>{item.name}</button>)});
+			answer.map((item) => {this.elem.push(<button onClick={this.level2click.bind(this,item.id)} key={item.name+item.id}>{item.name}</button>)});
 			break;
 		}
 	}	
@@ -81,6 +87,7 @@ displayOdd(){
   render() {
     return (
     <div className="everything">
+    {this.props.children}
       <div className="result">React simple starter
       	<div className="generatedButtons">
       	{	this.props.stuff.map((item) => {
