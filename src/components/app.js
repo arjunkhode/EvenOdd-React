@@ -56,7 +56,7 @@ elemUpdate(){
 // 	// }	
 // 	// return ("presenting: ",this.name2display);
 // return (this.props.inner);
-}
+// }
 // componentDidMount(){
 // 	// console.log("Hello");
 // 	if(this.props.stuff){
@@ -103,6 +103,14 @@ displayOdd(){
 	}
 }
 
+resetAll(){
+	this.props.swapState("");
+	this.props.setVehicle("");
+	this.elem=[];
+	document.querySelector('.vehiDetails').innerHTML="";
+	// document.querySelector('.btns').innerHTML="";
+}
+
   render() {
     return (
     <div className="everything">
@@ -123,6 +131,7 @@ displayOdd(){
 		</div>
 		<div className="vehiDetails">
 			{this.props.inner}
+			<button onClick={this.resetAll.bind(this)}>CLOSE</button>
 		</div>
 		</div>
 		</div>
