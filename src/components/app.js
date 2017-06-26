@@ -18,11 +18,12 @@ generateButtons(stuff){
 
 level2click(id){
 this.props.setVehicle(id);
+// console.log("set vehicle to:",id);
 }
 
 elemUpdate(){
 	let rez = this.props.current;
-	let eve = document.querySelector('.evenOdd');
+	// let eve = document.querySelector('.evenOdd');
 	// eve.textContent = "";
 	this.elem=[];
 	let answer="";
@@ -104,10 +105,9 @@ displayOdd(){
 }
 
 resetAll(){
-	this.props.swapState("");
+	// this.props.swapState("");
 	this.props.setVehicle("");
-	this.elem=[];
-	document.querySelector('.vehiDetails').innerHTML="";
+	// document.querySelector('.vehiDetails').innerHTML="";
 	// document.querySelector('.btns').innerHTML="";
 }
 
