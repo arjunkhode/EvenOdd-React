@@ -27,10 +27,17 @@ componentDidUpdate(){
 	document.querySelector('.stated').textContent=this.props.current;
 	console.log("changed the state to:",this.props.current);
 	let rez = this.props.current;
-	let obj = this.props.stuff[rez];
-	document.querySelector('.evenOdd').textContent="";
-	console.log("obj is:",obj.items);
-	// document.querySelector('.evenOdd').textContent+=;
+	let eve = document.querySelector('.evenOdd');
+	eve.textContent = "";
+	let answer="";
+	for(let i=0;i<this.props.stuff.length;i++){
+		if (this.props.stuff[i].title===rez){
+			answer = this.props.stuff[i].items;
+			// console.log("hhh:",answer);
+			answer.map((item) => {eve.textContent += item.name});
+			break;
+		}
+	}	
 }
 
 
@@ -67,7 +74,7 @@ displayOdd(){
       <div className="result">React simple starter
       	<div className="generatedButtons">
       	{	this.props.stuff.map((item) => {
-			return <button key={item.title} onClick={this.toggleButtons.bind(this, item.id)}>{item.title}</button>
+			return <button key={item.title} onClick={this.toggleButtons.bind(this, item.title)}>{item.title}</button>
 		})}
       	</div>
       	<div className="evenOdd">
