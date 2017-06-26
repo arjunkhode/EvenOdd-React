@@ -26,29 +26,13 @@ generateButtons(stuff){
 componentDidUpdate(){
 	document.querySelector('.stated').textContent=this.props.current;
 	console.log("changed the state to:",this.props.current);
+	let rez = this.props.current;
+	let obj = this.props.stuff[rez];
+	document.querySelector('.evenOdd').textContent="";
+	console.log("obj is:",obj.items);
+	// document.querySelector('.evenOdd').textContent+=;
 }
 
-displayResult(e){
-	// console.log("hi");
-	if(this.props.stuff){
-		// console.log("hiya");
-	// document.querySelector('.evenOdd').textContent="";
-		// if old state was odd, we call swapState action
-		// if(this.props.current === "odd"){
-			// console.log("even says: was odd, so switching state");
-			console.log(e.target);
-			this.props.swapState("");
-		// // }
-		// let cartemp = ""; // stores filtered cars in it, collects all results
-		// this.props.stuff.map((current)=> {
-		// 	if(current.title==="car")
-		// 	{current.items.map((item) => {cartemp+= "\n"+item.name});
-		// 	}
-		// 	document.querySelector('.evenOdd').textContent = cartemp;
-		// 	// console.log("car:",current.items);
-		// });
-	}
-}
 
 toggleButtons(itemID){
 console.log(this)
