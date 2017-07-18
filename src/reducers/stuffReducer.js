@@ -1,24 +1,52 @@
 export default function () {
   return [
   {
-    type: "even",
-    other: "stuffisnice"
+    "id": "1",
+    "title": "car",
+    "items": [
+        {
+          "id": "01",
+          "name": "Mazda"
+        }, {
+          "id": "02",
+          "name": "Honda"
+        }, {
+          "id": "03",
+          "name": "Maruti"
+        }, {
+          "id": "03",
+          "name": "Maruti"
+        }
+    ]
   },
   {
-    type: "odd",
-    other: "soo nice"
+    "id": "2",
+    "title": "Bikes",
+    "items": [
+        {
+          "id": "01",
+          "name": "Ducatti"
+        }, {
+          "id": "02",
+          "name": "Harley Davidson"
+        }
+    ]
   },
   {
-    type: "even",
-    other: "nice indeed"
-  },
-  {
-    type: "odd",
-    other: "nicey dicey"
-  },
-  {
-    type: "odd",
-    other: "so goood"
+    "id": "3",
+    "title": "Scooters",
+    "items": [
+        {
+          "id": "01",
+          "name": "Bajaj"
+        }, {
+          "id": "02",
+          "name": "Scooty"
+        }, {
+          "id": "02",
+          "name": "Sunny"
+        }
+    ]
   }
 ];
 }

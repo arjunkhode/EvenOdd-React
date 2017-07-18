@@ -1,6 +1,6 @@
 import { SWAP_STATE } from '../actions/index';
 
-const INITIAL_STATE = { stateRightNow: "even"};
+const INITIAL_STATE = { stateRightNow: null};
 
 export default function currentReducer(state = INITIAL_STATE, action){
 	switch(action.type){
